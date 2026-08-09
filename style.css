@@ -317,7 +317,7 @@ h2::before {
 
 .education-section .institution-logo-box {
   flex: 0 0 65px;
-  width: 65px;
+  width: 60px;
   height: 60px;
 
   display: flex;
