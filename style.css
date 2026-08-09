@@ -225,7 +225,7 @@ h2::before {
 
 
 
-/* ================= EDUCATION / EXPERIENCE / AWARDS ================= */
+/* ================= ITEMS ================= */
 
 .item {
   display: flex;
@@ -233,16 +233,22 @@ h2::before {
 
   gap: 35px;
 
-  margin-bottom: 27px;
+  margin-bottom: 29px;
 }
 
 .item-main {
   flex: 1;
+  min-width: 0;
 }
 
 .item-main > strong {
+  display: block;
+
+  margin-bottom: 3px;
+
   font-size: 16.5px;
   font-weight: 620;
+  line-height: 1.45;
 }
 
 .item-main p {
@@ -263,6 +269,80 @@ h2::before {
 
   color: var(--light-text);
   font-size: 14px;
+
+  white-space: nowrap;
+}
+
+
+
+/* ================= INSTITUTION LOGOS ================= */
+
+.institution-item {
+  justify-content: flex-start;
+  gap: 17px;
+}
+
+.institution-logo-box {
+  flex: 0 0 54px;
+
+  width: 54px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+}
+
+.institution-logo {
+  display: block;
+
+  max-width: 52px;
+  max-height: 44px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.institution-item .item-date {
+  margin-left: auto;
+}
+
+
+
+/* ================= EDUCATION LOGOS ================= */
+
+/*
+   The Yonsei and SKKU JPG files contain more whitespace
+   around the actual emblem, so they need stronger scaling.
+*/
+
+.education-section .institution-logo-box {
+  overflow: hidden;
+}
+
+.education-section .institution-logo {
+  max-width: none;
+  max-height: none;
+
+  width: 82px;
+  height: 82px;
+
+  object-fit: contain;
+
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+
+
+/* ================= AWARDS ================= */
+
+section:last-of-type .item {
+  margin-bottom: 0;
 }
 
 
@@ -319,12 +399,63 @@ footer {
     font-size: 12px;
   }
 
-  .item {
+
+  /* Institution entries */
+
+  .institution-item {
+    display: grid;
+
+    grid-template-columns: 48px 1fr;
+    gap: 0 14px;
+  }
+
+  .institution-logo-box {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    width: 48px;
+    height: 44px;
+  }
+
+  .institution-logo {
+    max-width: 46px;
+    max-height: 40px;
+  }
+
+  .institution-item .item-main {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .institution-item .item-date {
+    grid-column: 2;
+    grid-row: 2;
+
+    margin: 5px 0 0;
+  }
+
+
+  /* Larger Education logos on mobile */
+
+  .education-section .institution-logo {
+    max-width: none;
+    max-height: none;
+
+    width: 92px;
+    height: 92px;
+
+    transform: scale(1.2);
+  }
+
+
+  /* Awards */
+
+  .item:not(.institution-item) {
     flex-direction: column;
     gap: 3px;
   }
 
-  .item-date {
+  .item:not(.institution-item) .item-date {
     order: -1;
     margin-bottom: 3px;
   }
