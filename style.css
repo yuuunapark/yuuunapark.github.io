@@ -298,8 +298,8 @@ h2::before {
 .institution-logo {
   display: block;
 
-  max-width: 52px;
-  max-height: 44px;
+  max-width: 62px;
+  max-height: 56px;
 
   width: auto;
   height: auto;
@@ -315,25 +315,28 @@ h2::before {
 
 /* ================= EDUCATION LOGOS ================= */
 
-/*
-   The Yonsei and SKKU JPG files contain more whitespace
-   around the actual emblem, so they need stronger scaling.
-*/
-
 .education-section .institution-logo-box {
-  overflow: hidden;
+  flex: 0 0 65px;
+  width: 65px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
 }
 
 .education-section .institution-logo {
-  max-width: none;
-  max-height: none;
+  width: 62px;
+  height: 62px;
 
-  width: 82px;
-  height: 82px;
+  max-width: 62px;
+  max-height: 62px;
 
   object-fit: contain;
 
-  transform: scale(1.1);
+  transform: scale(1.7);
   transform-origin: center;
 }
 
@@ -435,18 +438,22 @@ footer {
   }
 
 
-  /* Larger Education logos on mobile */
+  /* Education logos on mobile */
 
-  .education-section .institution-logo {
-    max-width: none;
-    max-height: none;
+.education-section .institution-logo-box {
+  width: 54px;
+  height: 50px;
+}
 
-    width: 92px;
-    height: 92px;
+.education-section .institution-logo {
+  width: 50px;
+  height: 50px;
 
-    transform: scale(1.2);
-  }
+  max-width: 50px;
+  max-height: 50px;
 
+  transform: none;
+}
 
   /* Awards */
 
